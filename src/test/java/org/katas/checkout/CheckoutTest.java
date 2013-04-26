@@ -43,6 +43,16 @@ public class CheckoutTest
     	assertEquals(expectedTotalPrice, _totalPrice);
     }
 
+    @Test
+    public void should_return_30_total_price_when_1_item_B_added_to_basket()
+    {
+    	int expectedTotalPrice = 30;
+    	char itemBSku = 'B';
+    	
+    	addItemToBasket(itemBSku);
+    	
+    	assertEquals(expectedTotalPrice, _totalPrice);
+    }
     
     
     private int _totalPrice = 0;
@@ -55,8 +65,11 @@ public class CheckoutTest
 	private void addItemToBasket(char itemSku) 
 	{
 		final int itemAPrice = 60;
+		final int itemBPrice = 30;
 		
 		if(itemSku == 'A')
     		_totalPrice += itemAPrice;
+		if(itemSku == 'B')
+			_totalPrice += itemBPrice;
 	}
 }
