@@ -29,6 +29,12 @@ public class CheckoutTest
     	should_return_expected_total_price_when_x_itemSkus_added_to_basket(20, 1, 'C');
     }
     
+    @Test
+    public void should_return_15_total_price_when_1_item_D_added_to_basket()
+    {
+    	should_return_expected_total_price_when_x_itemSkus_added_to_basket(15, 1, 'D');
+    }
+    
     public void should_return_expected_total_price_when_x_itemSkus_added_to_basket(
     		final int expectedTotalPrice, 
     		final int x, 
@@ -55,6 +61,7 @@ public class CheckoutTest
 		final int itemAPrice = 60;
 		final int itemBPrice = 30;
 		final int itemCPrice = 20;
+		final int itemDPrice = 15;
 		
 		if(itemSku == 'A')
     		_totalPrice += itemAPrice;
@@ -62,5 +69,7 @@ public class CheckoutTest
 			_totalPrice += itemBPrice;
 		if(itemSku == 'C')
 			_totalPrice += itemCPrice;
+		if(itemSku == 'D')
+			_totalPrice += itemDPrice;
 	}
 }
