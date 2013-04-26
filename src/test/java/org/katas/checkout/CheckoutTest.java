@@ -1,21 +1,11 @@
 package org.katas.checkout;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
-public class CheckoutTest extends TestCase
+public class CheckoutTest 
 {
-    public CheckoutTest( String testName )
-    { 
-        super( testName );
-    }
-
-    public static Test suite()
-    {
-        return new TestSuite( CheckoutTest.class );
-    }
-
+    @Test
     public void testApp()
     {
         assertTrue( true );
