@@ -1,4 +1,4 @@
-package org.katas.checkout.tests;
+package org.katas.checkout;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
