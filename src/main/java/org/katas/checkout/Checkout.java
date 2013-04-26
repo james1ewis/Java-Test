@@ -1,6 +1,6 @@
-package com.mycompany.app;
+package org.katas.checkout;
 
-public class App 
+public class Checkout 
 {
     public static void main( String[] args )
     {
