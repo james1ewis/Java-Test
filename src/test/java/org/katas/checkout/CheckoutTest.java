@@ -23,44 +23,36 @@ public class CheckoutTest
     @Test
     public void should_return_60_total_price_when_1_item_A_added_to_basket()
     {	
-    	int expectedTotalPrice = 60;
-    	char itemASku = 'A';
-
-    	addItemToBasket(itemASku);
-    	
-    	assertEquals(expectedTotalPrice, _totalPrice);
+    	should_return_expected_total_price_when_x_itemSkus_added_to_basket(60, 1, 'A');
     }
     
     @Test
     public void should_return_120_total_price_when_2_item_A_added_to_basket()
     {
-    	int expectedTotalPrice = 120;
-    	char itemASku = 'A';
-    	
-    	addItemToBasket(itemASku);
-    	addItemToBasket(itemASku);
-    	
-    	assertEquals(expectedTotalPrice, _totalPrice);
+    	should_return_expected_total_price_when_x_itemSkus_added_to_basket(120, 2, 'A');
     }
 
     @Test
     public void should_return_30_total_price_when_1_item_B_added_to_basket()
     {
-    	int expectedTotalPrice = 30;
-    	char itemBSku = 'B';
-    	
-    	addItemToBasket(itemBSku);
-    	
-    	assertEquals(expectedTotalPrice, _totalPrice);
+    	should_return_expected_total_price_when_x_itemSkus_added_to_basket(30, 1, 'B');
     }
     
     @Test
     public void should_return_20_total_price_when_1_item_C_added_to_basket()
     {
-    	int expectedTotalPrice = 20;
-    	char itemCSku = 'C';
-    	
-    	addItemToBasket(itemCSku);
+    	should_return_expected_total_price_when_x_itemSkus_added_to_basket(20, 1, 'C');
+    }
+    
+    public void should_return_expected_total_price_when_x_itemSkus_added_to_basket(
+    		final int expectedTotalPrice, 
+    		final int x, 
+    		final char itemSku)
+    {
+    	for(int i = 0; i < x; i++)
+    	{
+    		addItemToBasket(itemSku);
+    	}
     	
     	assertEquals(expectedTotalPrice, _totalPrice);
     }
