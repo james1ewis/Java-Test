@@ -5,6 +5,14 @@ import org.junit.*;
 
 public class CheckoutTest 
 {   
+	private Checkout _systemUnderTest;
+	
+	@Before
+	public void setupSystemUnderTest()
+	{
+		_systemUnderTest = new Checkout();
+	}
+	
     @Test
     public void should_return_60_total_price_when_1_item_A_added_to_basket()
     {	
@@ -42,34 +50,9 @@ public class CheckoutTest
     {
     	for(int i = 0; i < x; i++)
     	{
-    		addItemToBasket(itemSku);
+    		_systemUnderTest.addItemToBasket(itemSku);
     	}
     	
-    	assertEquals(expectedTotalPrice, _totalPrice);
+    	assertEquals(expectedTotalPrice, _systemUnderTest.getTotalPrice());
     }
-    
-    
-    private int _totalPrice = 0;
-    
-	private int getTotalPrice()
-	{
-		return _totalPrice;
-	}
-    
-	private void addItemToBasket(char itemSku) 
-	{
-		final int itemAPrice = 60;
-		final int itemBPrice = 30;
-		final int itemCPrice = 20;
-		final int itemDPrice = 15;
-		
-		if(itemSku == 'A')
-    		_totalPrice += itemAPrice;
-		if(itemSku == 'B')
-			_totalPrice += itemBPrice;
-		if(itemSku == 'C')
-			_totalPrice += itemCPrice;
-		if(itemSku == 'D')
-			_totalPrice += itemDPrice;
-	}
 }
